@@ -1,6 +1,14 @@
 # Trunkle
 
-Truncate block-level DOM elements. There are no enhanced DOM pat-downs in trunkle.
+**Truncate block-level DOM elements.**
+
+There are no enhanced DOM pat-downs in trunkle. Other truncation libraries tend
+to use DOM manipulation to truncate content. This has limitations since it
+cannot elegantly handle block-level DOM elements with nested block-level DOM
+elements.
+
+Trunkle aims to simplify the DOM munging approach by using jQuery to attach
+appropriate classes along with one CSS rule to the content area.
 
 ## Examples
 
