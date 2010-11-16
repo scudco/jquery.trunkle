@@ -63,7 +63,7 @@
         .wrapInner(content)
         .append(showHideContainer)
         .attr('data-truncate', 'truncated')
-         .addClass(settings.collapsedClass);
+        .addClass(settings.collapsedClass);
     });
   };
 })(jQuery);
