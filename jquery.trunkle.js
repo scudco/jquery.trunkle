@@ -10,7 +10,7 @@
       lessText: "« show less",
       expandedClass: "trunkle-expanded",
       collapsedClass: "trunkle-collapsed",
-      contentContainerClass: 'trunkle-content',
+      contentClass: 'trunkle-content',
       collapsedHeight: "100px"
     }, settings);
 
@@ -25,11 +25,11 @@
       var truncateContainer = $(this);
       var toggleLink = $('<a href="#"></a>').text(settings.moreText);
       var showHideContainer = $('<div class="truncate-show-hide"></div>').append(toggleLink);
-      var contentContainer = $('<div class="' + settings.contentContainerClass + '"></div>');
+      var content = $('<div class="' + settings.contentClass + '"></div>');
 
       var toggleContainer = function() {
         var truncated = truncateContainer.attr('data-truncate');
-        var contentContainer = truncateContainer.find('.' + settings.contentContainerClass);
+        var content = truncateContainer.find('.' + settings.contentClass);
         var linkText = toggleLink.text();
 
         if ( truncated === 'truncated' ) {
@@ -37,10 +37,10 @@
           .toggleClass(settings.collapsedClass)
           .toggleClass(settings.expandedClass);
 
-          if ( contentContainer.css('height') === settings.collapsedHeight ) {
-            contentContainer.animate({ height: expandedHeight }, 500 );
+          if ( content.css('height') === settings.collapsedHeight ) {
+            content.animate({ height: expandedHeight }, 500 );
           } else {
-            contentContainer.animate({ height: settings.collapsedHeight }, 500 );
+            content.animate({ height: settings.collapsedHeight }, 500 );
           }
 
           if ( linkText === settings.moreText ) {
@@ -53,14 +53,14 @@
         return false;
       };
 
-      contentContainer.css({
+      content.css({
         "height": settings.collapsedHeight,
         "overflow": "hidden"
       });
       toggleLink.click(toggleContainer);
 
       truncateContainer
-        .wrapInner(contentContainer)
+        .wrapInner(content)
         .append(showHideContainer)
         .attr('data-truncate', 'truncated')
          .addClass(settings.collapsedClass);
