@@ -10,7 +10,7 @@
       lessText: "« show less",
       expandedClass: "trunkle-expanded",
       collapsedClass: "trunkle-collapsed",
-      contentContainer: '<div class="truncate-content"></div>',
+      contentContainerClass: 'trunkle-content',
       collapsedHeight: "100px"
     }, settings);
 
@@ -25,11 +25,11 @@
       var truncateContainer = $(this);
       var toggleLink = $('<a href="#"></a>').text(settings.moreText);
       var showHideContainer = $('<div class="truncate-show-hide"></div>').append(toggleLink);
-      var contentContainer = $(settings.contentContainer);
+      var contentContainer = $('<div class="' + settings.contentContainerClass + '"></div>');
 
       var toggleContainer = function() {
         var truncated = truncateContainer.attr('data-truncate');
-        var contentContainer = truncateContainer.find('.truncate-content');
+        var contentContainer = truncateContainer.find('.' + settings.contentContainerClass);
         var linkText = toggleLink.text();
 
         if ( truncated === 'truncated' ) {

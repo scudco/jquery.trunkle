@@ -36,5 +36,5 @@ Trunkle provides a few settings you can tweak.
   * lessText: "« show less"
   * expandedClass: "trunkle-expanded"
   * collapsedClass: "trunkle-collapsed"
-  * contentContainer: '&lt;div class="truncate-content"&gt;&lt;div&gt;'
+  * contentContainerClass: "trunkle-content"
   * collapsedHeight: "100px"
