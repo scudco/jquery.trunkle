@@ -25,7 +25,7 @@ Trunkle provides a few settings you can tweak.
       lessText: "shrink this",
       expandedClass: "bigger",
       collapsedClass: "smaller",
-      contentContainer: '<div class="mega-content"></div>',
+      contentContainerClass: 'mega-content',
       collapsedHeight: "400px"
     });
 
