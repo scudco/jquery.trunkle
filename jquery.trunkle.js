@@ -16,6 +16,14 @@
     }, settings);
 
     return this.each(function() {
+      settings.expandedHeight = $(this).css("height");
+
+      var collapsedHeightInt = parseInt(settings.collapsedHeight,10);
+      var expandedHeightInt = parseInt(settings.expandedHeight,10);
+      if ( collapsedHeightInt >= expandedHeightInt ) {
+        return;
+      }
+
       var truncateContainer = $(this);
       var toggleLink = $('<a href="#"></a>').text(settings.moreText);
       var showHideContainer = $('<div class="truncate-show-hide"></div>').append(toggleLink);
