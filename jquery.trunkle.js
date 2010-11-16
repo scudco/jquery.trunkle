@@ -11,15 +11,13 @@
       expandedClass: "trunkle-expanded",
       collapsedClass: "trunkle-collapsed",
       contentContainer: '<div class="truncate-content"></div>',
-      collapsedHeight: "100px",
-      expandedHeight: $(this).css("height")
+      collapsedHeight: "100px"
     }, settings);
 
     return this.each(function() {
-      settings.expandedHeight = $(this).css("height");
-
+      var expandedHeight = $(this).css("height");
       var collapsedHeightInt = parseInt(settings.collapsedHeight,10);
-      var expandedHeightInt = parseInt(settings.expandedHeight,10);
+      var expandedHeightInt = parseInt(expandedHeight,10);
       if ( collapsedHeightInt >= expandedHeightInt ) {
         return;
       }
@@ -40,7 +38,7 @@
           .toggleClass(settings.expandedClass);
 
           if ( contentContainer.css('height') === settings.collapsedHeight ) {
-            contentContainer.animate({ height: settings.expandedHeight }, 500 );
+            contentContainer.animate({ height: expandedHeight }, 500 );
           } else {
             contentContainer.animate({ height: settings.collapsedHeight }, 500 );
           }

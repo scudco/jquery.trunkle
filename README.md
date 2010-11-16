@@ -26,8 +26,7 @@ Trunkle provides a few settings you can tweak.
       expandedClass: "bigger",
       collapsedClass: "smaller",
       contentContainer: '<div class="mega-content"></div>',
-      collapsedHeight: "400px",
-      expandedHeight: "50em"
+      collapsedHeight: "400px"
     });
 
 
@@ -39,4 +38,3 @@ Trunkle provides a few settings you can tweak.
   * collapsedClass: "trunkle-collapsed"
   * contentContainer: '&lt;div class="truncate-content"&gt;&lt;div&gt;'
   * collapsedHeight: "100px"
-  * expandedHeight: $(this).css("height")
