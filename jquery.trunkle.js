@@ -1,5 +1,5 @@
 /*
-* Trunkle http://github.com/scudco/trunkle
+* Trunkle http://github.com/scudco/jquery.trunkle
 * by Adam Anderson http://scudco.github.com
 */
 
