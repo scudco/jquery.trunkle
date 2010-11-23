@@ -16,6 +16,9 @@ appropriate classes along with one CSS rule to the content area.
     $('article').trunkle({collapsedHeight: "5em"});
     $('article').trunkle({collapsedHeight: "250px"});
 
+    // Trim the height, but don't show the expand/collapse buttons.
+    $('article').trunkle({locked: true});
+
 ### Settings
 
 Trunkle provides a few settings you can tweak.
@@ -26,7 +29,8 @@ Trunkle provides a few settings you can tweak.
       expandedClass: "bigger",
       collapsedClass: "smaller",
       contentClass: 'mega-content',
-      collapsedHeight: "400px"
+      collapsedHeight: "400px",
+      locked: false
     });
 
 
@@ -38,3 +42,4 @@ Trunkle provides a few settings you can tweak.
   * collapsedClass: "trunkle-collapsed"
   * contentClass: "trunkle-content"
   * collapsedHeight: "100px"
+  * locked: false
