@@ -13,7 +13,7 @@
   </head>
   <body>
     <h1>Trunkle Example</h1>
-    <article>
+    <div data-truncate="not truncated">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium posuere est non pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum consequat ipsum odio. Quisque hendrerit fermentum tortor tempor vulputate. Suspendisse sagittis nulla sollicitudin lectus interdum feugiat. Sed nulla nunc, elementum in semper quis, pellentesque at massa. Curabitur gravida mauris ultrices felis pellentesque vehicula. Suspendisse tincidunt sodales nulla, vel blandit libero accumsan id. Vestibulum venenatis metus ut orci pellentesque tincidunt. Phasellus non tempor metus. In hendrerit iaculis lectus, in dapibus nulla adipiscing vitae. Nam mollis, ipsum non posuere tincidunt, quam eros mollis dui, sed dignissim lectus erat non turpis. Suspendisse a nulla eget leo porta viverra vel et metus. Pellentesque et ligula orci, non iaculis ligula. Morbi euismod ornare pretium. Sed eget libero eros, non tristique nisi. Suspendisse magna mauris, consectetur eu malesuada eu, consequat vel sapien.
       </p>
@@ -27,13 +27,13 @@
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium posuere est non pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum consequat ipsum odio. Quisque hendrerit fermentum tortor tempor vulputate. Suspendisse sagittis nulla sollicitudin lectus interdum feugiat. Sed nulla nunc, elementum in semper quis, pellentesque at massa. Curabitur gravida mauris ultrices felis pellentesque vehicula. Suspendisse tincidunt sodales nulla, vel blandit libero accumsan id. Vestibulum venenatis metus ut orci pellentesque tincidunt. Phasellus non tempor metus. In hendrerit iaculis lectus, in dapibus nulla adipiscing vitae. Nam mollis, ipsum non posuere tincidunt, quam eros mollis dui, sed dignissim lectus erat non turpis. Suspendisse a nulla eget leo porta viverra vel et metus. Pellentesque et ligula orci, non iaculis ligula. Morbi euismod ornare pretium. Sed eget libero eros, non tristique nisi. Suspendisse magna mauris, consectetur eu malesuada eu, consequat vel sapien.
       </p>
-    </article>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
     <script src="jquery.trunkle.js" type="text/javascript"></script>
     <script type="text/javascript">
       (function($) {
         $(function() {
-          $('article').trunkle();
+          $('div[data-truncate]').trunkle();
         })
       })(jQuery);
     </script>
