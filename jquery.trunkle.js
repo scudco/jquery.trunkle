@@ -11,7 +11,8 @@
       expandedClass: "trunkle-expanded",
       collapsedClass: "trunkle-collapsed",
       contentClass: 'trunkle-content',
-      collapsedHeight: "100px"
+      collapsedHeight: "100px",
+      locked: false
     }, settings);
 
     return this.each(function() {
@@ -23,41 +24,44 @@
       }
 
       var truncateContainer = $(this);
-      var toggleLink = $('<a href="#"></a>').text(settings.moreText);
-      var showHideContainer = $('<div class="truncate-show-hide"></div>').append(toggleLink);
       var content = $('<div class="' + settings.contentClass + '"></div>');
 
-      var toggleContainer = function() {
-        var truncated = truncateContainer.attr('data-truncate');
-        var content = truncateContainer.find('.' + settings.contentClass);
-        var linkText = toggleLink.text();
+      if(!settings.locked) {
+        var toggleLink = $('<a href="#"></a>').text(settings.moreText);
+        var showHideContainer = $('<div class="truncate-show-hide"></div>').append(toggleLink);
 
-        if ( truncated === 'truncated' ) {
-          truncateContainer
-          .toggleClass(settings.collapsedClass)
-          .toggleClass(settings.expandedClass);
+        var toggleContainer = function() {
+          var truncated = truncateContainer.attr('data-truncate');
+          var content = truncateContainer.find('.' + settings.contentClass);
+          var linkText = toggleLink.text();
 
-          if ( content.css('height') === settings.collapsedHeight ) {
-            content.animate({ height: expandedHeight }, 500 );
-          } else {
-            content.animate({ height: settings.collapsedHeight }, 500 );
+          if ( truncated === 'truncated' ) {
+            truncateContainer
+            .toggleClass(settings.collapsedClass)
+            .toggleClass(settings.expandedClass);
+
+            if ( content.css('height') === settings.collapsedHeight ) {
+              content.animate({ height: expandedHeight }, 500 );
+            } else {
+              content.animate({ height: settings.collapsedHeight }, 500 );
+            }
+
+            if ( linkText === settings.moreText ) {
+              toggleLink.text(settings.lessText);
+            } else if ( linkText === settings.lessText ) {
+              toggleLink.text(settings.moreText);
+            }
           }
 
-          if ( linkText === settings.moreText ) {
-            toggleLink.text(settings.lessText);
-          } else if ( linkText === settings.lessText ) {
-            toggleLink.text(settings.moreText);
-          }
-        }
-
-        return false;
-      };
+          return false;
+        };
+        toggleLink.click(toggleContainer);
+      }
 
       content.css({
         "height": settings.collapsedHeight,
         "overflow": "hidden"
       });
-      toggleLink.click(toggleContainer);
 
       truncateContainer
         .wrapInner(content)
